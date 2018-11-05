@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+
+</head>
+
+<body>
+
+
+<div class="jumbotron text-center">
+
+  <div class="container">
+
+    <a href="/" class="lang-logo">
+
+      <img src="/lang-logo.png">
+
+    </a>
+    <a href="/" class="lang-logo">
+
+      <img src="/mongo-logo.png">
+
+    </a>
+
+    <h1>Simple Restful App With NodeJS And MongoDB</h1>
+   
+  </div>
+</div>
+
+<div class="container">
+  
+  <hr class="separator">
+  <div class="row" >
+    <div class="col-md-12" >
+
+        
+     <%
+
+     if(miArray.length==0)
+     {
+    
+      %>
+        <p class="centeredParagraph">There are no users on this data base!</p>
+        <p class="centeredParagraph" >Please push BACK button, insert some data and check again!</p>
+
+
+      <%
+     }
+
+     else
+     {
+     %>
+
+        <!--https://scotch.io/tutorials/use-ejs-to-template-your-node-application#passing-data-to-views-->
+
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+               
+            </tr>
+          </thead>
+          <tbody>
+              
+            <% 
+     
+
+                miArray.forEach(function(usuario){
+
+            %>
+              <tr>
+      
+                <td>
+      
+                  <%= usuario.firstName %>
+
+                </td>
+
+                <td>
+      
+                  <%= usuario.lastName %>
+  
+                </td>
+
+              </tr>
+
+              <%
+
+                });
+
+              %>
+
+    
+          </tbody>
+        </table>
+
+    <%
+    
+      }//end of else
+
+    %>
+    
+    </div><!--col-->   
+        
+     
+     
+  </div> <!-- row -->
+
+  <div class="centerLink">
+ 
+    <a type="button" class="btn btn-lg btn-success" href="/">BACK</a>
+
+  </div>
+
+  
+</div><!--container-->
+
+
+
+</body>
+</html>
